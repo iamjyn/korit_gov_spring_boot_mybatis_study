@@ -1,6 +1,5 @@
 package com.korit.mybatis_study.repository;
 
-import com.korit.mybatis_study.dto.ApiRespDto;
 import com.korit.mybatis_study.entity.Board;
 import com.korit.mybatis_study.mapper.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import java.util.Optional;
 
 @Repository
 public class BoardRepository {
-    private BoardRepository boardRepository;
 
     @Autowired
     private BoardMapper boardMapper;
@@ -45,5 +43,4 @@ public class BoardRepository {
     public int removeBoard(Integer boardId) {
         return boardMapper.removeBoard(boardId);
     }
-
 }

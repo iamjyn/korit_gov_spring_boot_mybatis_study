@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class BoardService {
-    private BoardService boardService;
 
     @Autowired
     private BoardRepository boardRepository;
@@ -65,7 +64,7 @@ public class BoardService {
         }
         int result = boardRepository.removeBoard(foundBoard.get().getBoardId());
         if (result != 1) {
-            return new ApiRespDto<>("failed", "게시물을 수정하는데 문제가 발생했습니다.", null);
+            return new ApiRespDto<>("failed", "게시물을 삭제하는데 문제가 발생했습니다.", null);
         }
         return new ApiRespDto<>("success", "게시물 삭제 성공", null);
     }

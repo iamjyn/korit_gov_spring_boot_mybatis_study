@@ -8,7 +8,6 @@ import com.korit.mybatis_study.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -64,6 +63,4 @@ public class TodoService {
         }
         return new ApiRespDto<>("success", "Todo 삭제 성공", null);
     }
-
-
 }

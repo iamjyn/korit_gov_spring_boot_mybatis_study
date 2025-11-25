@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.korit.mybatis_study.mapper.BookMapper">
+    <resultMap id="BookResultMap" type="com.korit.mybatis_study.entity.Book">
+        <id property="bookId" column="book_id" />
+        <result property="title" column="title" />
+        <result property="author" column="author" />
+        <result property="createDt" column="create_dt" />
+        <result property="updateDt" column="update_dt" />
+    </resultMap>
+    <select id="findBookByTitle" resultMap="BookResultMap">
+        select
+            *
+        from
+            book_tb
+        where
+            title = #{title};
+    </select>
+    <insert id="addBook" useGeneratedKeys="true" keyProperty="bookId">
+        insert into
+            book_tb
+        values
+            (0, #{title}, #{author}, now(), null);
+    </insert>
+    <select id="getBookList" resultMap="BookResultMap">
+        select
+            *
+        from
+            book_tb
+    </select>
+    <select id="findByBookId" resultMap="BookResultMap">
+        select
+            *
+        from
+            book_tb
+        where
+            book_id = #{bookId};
+    </select>
+    <update id="editBook">
+        update
+            book_tb
+        set
+            title = #{title},
+            author = #{author},
+            update_dt = now()
+        where
+            book_id = #{bookId};
+    </update>
+    <delete id="removeBook">
+        delete from
+            book_tb
+        where
+            book_id = #{bookId};
+    </delete>
+</mapper>

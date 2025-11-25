@@ -36,7 +36,7 @@
         from
             todo_tb
         where
-            todo_id = #{todoId}
+            todo_id = #{todoId};
     </select>
     <update id="editTodo">
         update

@@ -43,6 +43,4 @@ public class TodoController {
     public ResponseEntity<?> removeTodo(@RequestParam Integer todoId) {
         return ResponseEntity.ok(todoService.removeTodo(todoId));
     }
-
-
 }

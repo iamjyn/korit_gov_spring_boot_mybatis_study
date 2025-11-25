@@ -43,5 +43,4 @@ public class TodoRepository {
     public int removeTodo(Todo todo) {
         return todoMapper.removeTodo(todo);
     }
-
 }
